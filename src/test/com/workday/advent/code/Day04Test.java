@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
+import java.util.Arrays;
 
 class Day04Test {
     Day04 day04;
@@ -28,5 +29,25 @@ class Day04Test {
         record = day04.parseInput(c1);
         System.out.println(record);
 
+    }
+
+
+    @Test
+    void trytest() throws ParseException {
+        Integer integer = day04.mostAsleep.putIfAbsent(1, 5);
+        System.out.println(integer);
+        integer = day04.mostAsleep.putIfAbsent(1, 34);
+        System.out.println(integer);
+
+        integer = day04.mostAsleep.merge(1, 66, (k, v) -> v+1);
+        System.out.println(integer);
+
+        integer = day04.mostAsleep.compute(1, (k, v) -> v == null ? 1 : v+1);
+        System.out.println(integer);
+        integer = day04.mostAsleep.compute(2, (k, v) -> v == null ? 1 : v+1);
+        System.out.println(integer);
+
+        int[] intero = new int[4];
+        System.out.println(Arrays.toString(intero));
     }
 }
