@@ -35,4 +35,12 @@ public class Day05Test {
         String reduced = day05.reducePolymer(test);
         System.out.println(String.format("From %s ===> %s", test, reduced));
     }
+
+    @Test
+    void parserImproved() {
+        String test = "dabAcCaCBAcCcaDA";
+
+        String reduced = day05.reduceImproved(test);
+        System.out.println(String.format("From %s ===> %s", test, reduced));
+    }
 }
